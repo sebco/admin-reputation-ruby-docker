@@ -1,0 +1,56 @@
+#
+# To check if .dockerignore is working: `docker run --rm <IMAGE>:<TAG> ls -al`
+# Eg:
+# $> docker images
+#   REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+#   monitor-dnb_web     latest              8e009f7b9262        5 minutes ago       975MB
+# Then:
+# $> docker run --rm monitor-dnb_web:latest ls -al
+#
+
+.git
+.gitignore
+.dockerignore
+.env
+README.md
+doc
+
+#
+# OS X
+#
+.DS_Store
+.AppleDouble
+.LSOverride
+# Icon must end with two \r
+Icon
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#
+# Rails
+#
+.env
+.env*
+*.rbc
+log
+tmp
+!/tmp/.keep
+!/tmp/pids/.keep
+db/*.sqlite3
+db/*.sqlite3-journal
+public/system
+coverage/
+spec/tmp
+.bundle
+.ruby-version
+.ruby-gemset
+.rvmrc
