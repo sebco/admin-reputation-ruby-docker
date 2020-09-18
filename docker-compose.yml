@@ -22,7 +22,7 @@ services:
         source: ./admin-reputation
         target: /opt/app/admin-reputation
     ports:
-      - '8010:8010'
+      - '3030:3030'
     env_file:
       - .env
 
