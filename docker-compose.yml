@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+
+  postgres:
+    image: postgres:12.1
+    ports: 
+      - ${DATABASE_PORT_EXPOSED}:${DATABASE_PORT}
+    volumes:
+      - admin-reputation-postgres:/var/lib/postgresql/data
+
+  admin-reputation:
+    build:
+      context: .
+      args:
+        USER_ID: "${USER_ID:-1000}"
+        GROUP_ID: "${GROUP_ID:-1000}"
+    depends_on:
+      - postgres
+    volumes:
+      - type: bind
+        source: ./admin-reputation
+        target: /opt/app/admin-reputation
+    ports:
+      - '8010:8010'
+    env_file:
+      - .env
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx
+    depends_on:
+      - admin-reputation
+    ports:
+      - '8042:8042'
+
+volumes:
+  admin-reputation-postgres:
