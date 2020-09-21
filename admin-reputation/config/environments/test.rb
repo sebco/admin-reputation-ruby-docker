@@ -42,7 +42,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   # Print deprecation notices to the stderr.
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = :log
+  # https://stackoverflow.com/questions/5591509/suppress-ruby-warnings-when-running-specs
+  Warning[:deprecated] = false
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true

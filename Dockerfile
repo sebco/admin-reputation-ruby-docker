@@ -17,9 +17,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn
 
 # rails
 RUN gem install rails bundler
-COPY admin-reputation/Gemfile Gemfile
+COPY admin-reputation/Gemfile* /opt/app/admin-reputation/
 WORKDIR /opt/app/admin-reputation
 RUN bundle install
+RUN bundle exec rails assets:precompile
 
 RUN chown -R user:user /opt/app
 USER $USER_ID

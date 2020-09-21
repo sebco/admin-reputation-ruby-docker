@@ -79,11 +79,12 @@ The docker initialization was covered in the [Installation > Introduction](../in
     ```
     docker-compose run --user "1000:1000" admin-reputation rake db:reset
     docker-compose run --user "1000:1000" admin-reputation rake db:migrate
+    docker-compose run --user "1000:1000" admin-reputation rake db:seed
     ```
 
     **Note:** you can now use `docker-compose exec admin-reputation bash` to navigate inside the admin-reputation container.
 
-1. That’s it. Head over to `http://localhost:8042` to see the the welcome page.
+1. That’s it. Head over to `http://localhost:8042` to see the the welcome page. And to `http://localhost:8042/admin` to see the admin space.
 
 1. To stop the application, run:
 

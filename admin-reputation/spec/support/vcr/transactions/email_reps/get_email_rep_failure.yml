@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://emailrep.io/123@email.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Date:
+      - Mon, 21 Sep 2020 10:32:50 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '803'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"69abe9c5b8c622805a4d2156b8c8ee14d9302b75"'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "email": "123@email.com",
+          "reputation": "high",
+          "suspicious": false,
+          "references": 94,
+          "details": {
+            "blacklisted": false,
+            "malicious_activity": false,
+            "malicious_activity_recent": false,
+            "credentials_leaked": true,
+            "credentials_leaked_recent": false,
+            "data_breach": true,
+            "first_seen": "07/01/2008",
+            "last_seen": "06/29/2020",
+            "domain_exists": true,
+            "domain_reputation": "n/a",
+            "new_domain": false,
+            "days_since_domain_creation": 8405,
+            "suspicious_tld": false,
+            "spam": false,
+            "free_provider": true,
+            "disposable": false,
+            "deliverable": false,
+            "accept_all": false,
+            "valid_mx": true,
+            "primary_mx": "mx00.mail.com",
+            "spoofable": true,
+            "spf_strict": true,
+            "dmarc_enforced": false,
+            "profiles": []
+          }
+        }
+  recorded_at: Mon, 21 Sep 2020 10:32:50 GMT
+recorded_with: VCR 6.0.0
