@@ -1,3 +1,4 @@
+# Source: https://docs.emailrep.io/
 class EmailRepGateway
   include Dry::Monads::Result::Mixin
 

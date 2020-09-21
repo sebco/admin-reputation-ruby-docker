@@ -1,3 +1,4 @@
+# source: https://semaphoreci.com/community/tutorials/dockerizing-a-ruby-on-rails-application
 FROM ruby:2.7.1
 MAINTAINER sebco
 
