@@ -21,7 +21,7 @@ RUN gem install rails bundler
 COPY admin-reputation/Gemfile* /opt/app/admin-reputation/
 WORKDIR /opt/app/admin-reputation
 RUN bundle install
-RUN bundle exec rails assets:precompile
+RUN if [ "$RAILS_ENV" = "production" ]; then bundle exec rake assets:precompile; fi
 
 RUN chown -R user:user /opt/app
 USER $USER_ID
